@@ -41,8 +41,8 @@ build__main(){
 
 
 build__load_build_conf(){
-    if [ -f 'build.conf' ] ; then
-        sourcing 'build.conf' || die "Err: could load build.conf"
+    if [ -f "$PWD/build.conf" ] ; then
+        sourcing "$PWD/build.conf" || die "Err: could load build.conf in '$PWD/build.conf'"
     else
         die "Err: 'build.conf' missing"
      fi
@@ -55,8 +55,8 @@ build__run(){
 
     local build_cached=
 
-    if [ -f 'build.cache' ] ; then
-        if sourcing 'build.cache'; then
+    if [ -f "$PWD/build.cache" ] ; then
+        if sourcing "$PWD/build.cache"; then
             build_cached=1
         else
             die "Err: could not load cache"
@@ -65,14 +65,13 @@ build__run(){
         build__load_build_conf  
     fi
 
-    [ -z ${COMPILER_NAME+x} ] && die 'Err: var COMPILER_NAME unset'
 
     if [ -z "$build_cached" ] ; then
         build__set_globals
     fi
 
 
-    if sourcing 'build.sh' "$input" ; then
+    if sourcing "$PWD/build.sh" "$input" ; then
         echo 'build.sh ran successfully ...'
         exit 1
     else
@@ -201,6 +200,8 @@ build__print(){
 
 
 build__set_globals(){
+
+    [ -z ${COMPILER_NAME+x} ] && die 'Err: var COMPILER_NAME not set'
 
     local build__compiler_home=
     if [ -n "${COMPILER_VERS_BASEDIR:-}" ] ; then
