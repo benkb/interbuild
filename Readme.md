@@ -6,13 +6,16 @@ interpreted. This system stitches together the path needed
 
 
 
-Files:
+Files
+-----
+
+interbuild.sh the main script, sources build.conf or build.cache, and then
+build.sh
 
 build.conf:  user defined variables
-build.sh:    user script that consumes the variables from the interbuild script
 build.cache: caching the build variables, print those with `interbuild print`
+build.sh:    user script that consumes the variables from the interbuild script
 hello.sml    example
-interbuild.sh the main script
 
 
 User Variables
@@ -29,12 +32,10 @@ INTERP_VERS_BASEDIR='/usr/local/Cellar/'
 INTERP_VERS_MINOR=5.3.6
 
 
-
 Resulting Build Variables
 -------------------------
 
 These variables can be used in your personaal `build.sh` script
-
 
 BUILD__COMPILER_HOME='/Users/ben/build/lunarml/lunarml.git'
 BUILD__COMPILER_BIN='/Users/ben/build/lunarml/lunarml.git/bin/lunarml'
