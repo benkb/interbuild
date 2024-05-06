@@ -1,0 +1,9 @@
+COMPILER_NAME='lunarml'
+COMPILER_HOME="${LUNARML_HOME:-}"
+COMPILER_HOME_DEFAULT=$HOME/build/lunarml/lunarml.git
+COMPILER_LIB='lib/lunarml'
+
+INTERP_NAME=lua
+INTERP_VERS=5.3
+INTERP_VERS_BASEDIR='/usr/local/Cellar/'
+INTERP_VERS_MINOR=5.3.6

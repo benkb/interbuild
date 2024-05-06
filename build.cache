@@ -1,0 +1,7 @@
+COMPILER_NAME='lunarml'
+BUILD__COMPILER_HOME='/Users/ben/build/lunarml/lunarml.git'
+BUILD__COMPILER_BIN='/Users/ben/build/lunarml/lunarml.git/bin/lunarml'
+BUILD__COMPILER_LIB='/Users/ben/build/lunarml/lunarml.git/lib/lunarml'
+BUILD__INTERP_HOME='/usr/local/Cellar//lua@5.3/5.3.6'
+BUILD__INTERP_BIN='/usr/local/Cellar//lua@5.3/5.3.6/bin/lua'
+BUILD__INTERP_LIB=''
